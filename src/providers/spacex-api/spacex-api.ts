@@ -10,7 +10,8 @@ import { Observable } from 'rxjs/Observable';
 */
 @Injectable()
 export class SpacexApiProvider {
-  baseUrl = 'https://api.spacexdata.com/v2'
+  
+  private baseUrl = 'https://api.spacexdata.com/v2';
 
   constructor(public http: HttpClient) {
 
@@ -26,4 +27,8 @@ export class SpacexApiProvider {
     return this.http.get<Launch>(endpointUrl);
   }
 
+  getAllLaunches(): Observable<any> {
+    const endpointUrl = `${this.baseUrl}/launches/all`;
+    return this.http.get<Observable<any>>(endpointUrl);
+  }
 }

@@ -5,10 +5,10 @@ webpackJsonp([3],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LaunchesListPageModule", function() { return LaunchesListPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LaunchDetailsPageModule", function() { return LaunchDetailsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__launches_list__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__launch_details__ = __webpack_require__(280);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var LaunchesListPageModule = /** @class */ (function () {
-    function LaunchesListPageModule() {
+var LaunchDetailsPageModule = /** @class */ (function () {
+    function LaunchDetailsPageModule() {
     }
-    LaunchesListPageModule = __decorate([
+    LaunchDetailsPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__launches_list__["a" /* LaunchesListPage */],
+                __WEBPACK_IMPORTED_MODULE_2__launch_details__["a" /* LaunchDetailsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__launches_list__["a" /* LaunchesListPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__launch_details__["a" /* LaunchDetailsPage */]),
             ],
         })
-    ], LaunchesListPageModule);
-    return LaunchesListPageModule;
+    ], LaunchDetailsPageModule);
+    return LaunchDetailsPageModule;
 }());
 
-//# sourceMappingURL=launches-list.module.js.map
+//# sourceMappingURL=launch-details.module.js.map
 
 /***/ }),
 
@@ -42,9 +42,9 @@ var LaunchesListPageModule = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchesListPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,29 +57,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the LaunchesListPage page.
+ * Generated class for the LaunchDetailsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var LaunchesListPage = /** @class */ (function () {
-    function LaunchesListPage(navCtrl, navParams) {
+var LaunchDetailsPage = /** @class */ (function () {
+    function LaunchDetailsPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    LaunchesListPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad LaunchesListPage');
+    LaunchDetailsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LaunchDetailsPage');
     };
-    LaunchesListPage = __decorate([
+    LaunchDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-launches-list',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\launches-list\launches-list.html"*/'<!--\n  Generated template for the LaunchesListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>launches-list</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\launches-list\launches-list.html"*/,
+            selector: 'page-launch-details',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\launch-details\launch-details.html"*/'<!--\n  Generated template for the LaunchDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>launch-details</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\launch-details\launch-details.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], LaunchesListPage);
-    return LaunchesListPage;
+    ], LaunchDetailsPage);
+    return LaunchDetailsPage;
 }());
 
-//# sourceMappingURL=launches-list.js.map
+//# sourceMappingURL=launch-details.js.map
 
 /***/ })
 
