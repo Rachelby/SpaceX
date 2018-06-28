@@ -1,18 +1,22 @@
 <ion-header>
-
   <ion-navbar>
-    <ion-title>Launches</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Lancements</ion-title>
   </ion-navbar>
 </ion-header>
+
+
 <ion-content padding>
   
 <!-- Search bar -->
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of items">
       {{ item }}
     </ion-item>
-  </ion-list>
+  </ion-list> -->
   <!-- End search bar -->
 
   <ion-card  *ngFor="let launch of launches">
@@ -27,9 +31,9 @@
 
       <ion-row no-padding>
         <ion-col text-right>
-            <button ion-button clear small color="danger" icon-start>
+            <button (click)="getLaunch(launch.flight_number)" ion-button clear small color="danger" icon-start>
               <ion-icon name='md-eye'></ion-icon>
-              Details
+              Détails
             </button>
           </ion-col>
         <ion-col>

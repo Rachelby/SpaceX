@@ -17,18 +17,44 @@ export class SpacexApiProvider {
 
   }
 
+  // Récuperer liste des prochains lancements 
   getNextLaunches() : Observable<Launch[]>{
     const endpointUrl = `${this.baseUrl}/launches/upcoming`;
     return this.http.get<Launch[]>(endpointUrl);
   }
 
+  // Récuperer les détails du prochain lancement 
   getNextLaunch() : Observable<Launch>{
-    const endpointUrl = `${this.baseUrl}/launches/next`;
+   const endpointUrl = `${this.baseUrl}/launches/next`;
+    console.log(endpointUrl);
     return this.http.get<Launch>(endpointUrl);
   }
 
+  // Récuperer tous les lancements 
   getAllLaunches(): Observable<any> {
     const endpointUrl = `${this.baseUrl}/launches/all`;
     return this.http.get<Observable<any>>(endpointUrl);
   }
+
+  // Recuperer détails d'un lancement 
+  getLaunch(id : string): Observable<any> {
+    const endpointUrl = `${this.baseUrl}/launches/all?flight_number=${id}`;
+    console.log(endpointUrl);
+    return this.http.get<Observable<any>>(endpointUrl);
+  }
+
+  // Recuperer la liste des rockets
+  getAllRockets(): Observable<any> {
+    const endpointUrl = `${this.baseUrl}/rockets`;
+    console.log(endpointUrl);
+    return this.http.get<Observable<any>>(endpointUrl);
+  }
+  
+  // Recuperer détails d'une rocket
+  getRocket(name : string): Observable<any> {
+    const endpointUrl = `${this.baseUrl}/rockets/${name}`;
+    console.log(endpointUrl);
+    return this.http.get<Observable<any>>(endpointUrl);
+  }
+
 }

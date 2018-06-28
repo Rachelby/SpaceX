@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpacexApiProvider } from '../../providers/spacex-api/spacex-api';
+import { LaunchDetailsPage } from '../launch-details/launch-details';
 
 /**
  * Generated class for the LaunchListPage page.
@@ -17,6 +18,7 @@ import { SpacexApiProvider } from '../../providers/spacex-api/spacex-api';
 
 export class LaunchListPage {
   launches: any;
+  launch: any; 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private spacexApi: SpacexApiProvider) {
@@ -25,9 +27,16 @@ export class LaunchListPage {
     })
   }
 
+  getLaunch(id:string) {
+    console.log(id);
+    this.navCtrl.push(LaunchDetailsPage, id); 
+  }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LaunchListPage');
   }
 
 }
+
+

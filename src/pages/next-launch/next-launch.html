@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Prochain lancement</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <!-- <pre *ngIf="launch">{{launch | json}}</pre> -->
+    <ion-card  *ngIf="launch">  
+      <ion-item>
+        <ion-icon name="" item-start large></ion-icon>
+        <h2>Mission {{launch.mission_name}}</h2>
+        <p>Lancement #{{launch.flight_number}}</p>
+        <p>le {{ launch.launch_date_local | date: 'dd/MM/yyyy H:mm' }}</p>
+      </ion-item>
+  
+      
+      <!-- <img src="{{launch.links.mission_patch}}"/> -->
+    
+      <ion-card-content>
+          <p>{{ launch.details }}</p>
+        </ion-card-content>
+      <ion-item>
+      <ion-icon name="" item-start large ></ion-icon>
+        <h2></h2>
+        <p></p>
+      </ion-item>
+    
+      <ion-item>
+        <span item-start></span>
+        <span item-start></span>
+        <button ion-button icon-start clear item-end>
+          <ion-icon name="navigate"></ion-icon>
+          Suivre
+        </button>
+      </ion-item>
+    
+    </ion-card>
+  
+  </ion-content>

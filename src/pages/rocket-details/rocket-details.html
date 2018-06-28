@@ -1,0 +1,46 @@
+<!--
+  Generated template for the RocketDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title> Détails de la Rocket</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+      <!-- <pre *ngIf="rocket">{{rocket | json}}</pre> -->
+      <ion-card  *ngIf="rocket">  
+    
+    
+        <ion-item>
+          <ion-avatar item-start>
+          </ion-avatar>
+          <h2>{{rocket.name}}</h2>
+        </ion-item>
+      
+      
+        <ion-card-content>
+          <p>{{ rocket.description }}</p>
+        </ion-card-content>
+      
+        <ion-row>
+          
+          <!-- <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon name="text"></ion-icon>
+              <div>4 Comments</div>
+            </button>
+          </ion-col> -->
+         
+        </ion-row>
+      
+      </ion-card>
+    
+      
+    </ion-content>
