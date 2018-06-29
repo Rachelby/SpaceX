@@ -57,4 +57,11 @@ export class SpacexApiProvider {
     return this.http.get<Observable<any>>(endpointUrl);
   }
 
+  // Récuperer les informations de SpaceX
+  getInfoSpaceX() : Observable<any> {
+    const endpointUrl = `${this.baseUrl}/info`;
+    console.log(endpointUrl);
+    return this.http.get<Observable<any>>(endpointUrl);
+  }
+
 }

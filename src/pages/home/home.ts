@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SpacexApiProvider } from '../../providers/spacex-api/spacex-api';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,19 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-
+  info: any;
+ 
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private spacexApi: SpacexApiProvider) {
+      this.spacexApi.getInfoSpaceX().subscribe(data => {
+      this.info = data;
+      console.log(this.info);
+    })
   }
 
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HomePage');
+  }
 }

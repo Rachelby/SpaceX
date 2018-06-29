@@ -3,16 +3,22 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Accueil</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+   <!-- <pre *ngIf="info">{{ info | json}}</pre> -->
+<ion-content class="card-background-page">
+   <ion-card  *ngIf="info">  
+    <img src="assets/imgs/spacex.jpg"/>
+    <div class="card-title">{{ info.name }}</div>
+    <div class="card-subtitle">{{ info.founder }}</div>
+  </ion-card>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <ion-card *ngIf="info">
+    <ion-card-content>
+      {{ info.summary }}
+    </ion-card-content>
+  </ion-card>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>

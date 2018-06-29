@@ -7,7 +7,7 @@ webpackJsonp([5],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rocket_details_rocket_details__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -52,7 +52,7 @@ var LaunchDetailsPage = /** @class */ (function () {
     };
     LaunchDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-launch-details',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\launch-details\launch-details.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Détails du lancement</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <!-- <pre *ngIf="launch">{{launch | json}}</pre> -->\n  <ion-card  *ngIf="launch">  \n\n\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="{{launch[0].links.mission_patch_small}}">\n      </ion-avatar>\n      <h2>Mission {{launch[0].mission_name}}</h2>\n      <p>Lancement #{{launch[0].flight_number}}</p>\n      <p>le {{ launch[0].launch_date_local | date: \'dd/MM/yyyy H:mm\' }}</p>\n    </ion-item>\n    \n    \n    <img src="{{launch[0].links.mission_patch}}">\n  \n    <ion-card-content>\n      <p>{{ launch[0].details }}</p>\n    </ion-card-content>\n\n    <!-- <ion-item>\n        <iframe width="200" height="100" src="https://www.youtube.com/embed/MLleDRkSuvk" frameborder="0" allowfullscreen></iframe>\n    </ion-item> -->\n\n    <ion-row>\n      <ion-col>\n        <button (click)="getRocket(launch[0].rocket.rocket_id)" ion-button icon-start clear small>\n          <ion-icon name="ios-jet"></ion-icon>\n          <div>Roquette</div>\n        </button>\n      </ion-col>\n      <ion-col>\n        <button ion-button icon-start clear small>\n          <ion-icon name="text"></ion-icon>\n          <div>4 Comments</div>\n        </button>\n      </ion-col>\n      <ion-col center text-center>\n        <ion-note>\n          11h ago\n        </ion-note>\n      </ion-col>\n    </ion-row>\n  \n  </ion-card>\n\n  \n</ion-content>'/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\launch-details\launch-details.html"*/,
+            selector: 'page-launch-details',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\launch-details\launch-details.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Détails du lancement</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <!-- <pre *ngIf="launch">{{launch | json}}</pre> -->\n  <ion-card  *ngIf="launch">  \n\n\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="{{launch[0].links.mission_patch_small}}">\n      </ion-avatar>\n      <h2>Mission {{launch[0].mission_name}}</h2>\n      <p>Lancement #{{launch[0].flight_number}}</p>\n      <p>le {{ launch[0].launch_date_local | date: \'dd/MM/yyyy H:mm\' }}</p>\n    </ion-item>\n    \n    \n    <img src="{{launch[0].links.mission_patch}}">\n  \n    <ion-card-content>\n      <p>{{ launch[0].details }}</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button (click)="getRocket(launch[0].rocket.rocket_id)" ion-button icon-start clear small>\n          <ion-icon name="ios-jet"></ion-icon>\n          <div>Roquette</div>\n        </button>\n      </ion-col>\n      <ion-col>\n        <button ion-button icon-start clear small>\n          <ion-icon name="text"></ion-icon>\n          <div>4 Comments</div>\n        </button>\n      </ion-col>\n      <ion-col center text-center>\n        <ion-note>\n          11h ago\n        </ion-note>\n      </ion-col>\n    </ion-row>\n  \n  </ion-card>\n\n  \n</ion-content>'/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\launch-details\launch-details.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
@@ -72,7 +72,7 @@ var LaunchDetailsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__launch_details_launch_details__ = __webpack_require__(101);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -132,7 +132,7 @@ var LaunchListPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NextLaunchPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__ = __webpack_require__(26);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -187,7 +187,7 @@ var NextLaunchPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RocketPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rocket_details_rocket_details__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -274,11 +274,11 @@ var map = {
 		2
 	],
 	"../pages/rocket-details/rocket-details.module": [
-		285,
+		286,
 		1
 	],
 	"../pages/rocket/rocket.module": [
-		286,
+		285,
 		0
 	]
 };
@@ -305,6 +305,7 @@ module.exports = webpackAsyncContext;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__ = __webpack_require__(26);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -316,15 +317,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl) {
+    function HomePage(navCtrl, navParams, spacexApi) {
+        var _this = this;
         this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.spacexApi = spacexApi;
+        this.spacexApi.getInfoSpaceX().subscribe(function (data) {
+            _this.info = data;
+            console.log(_this.info);
+        });
     }
+    HomePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad HomePage');
+    };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h3>Ionic Menu Starter</h3>\n\n  <p>\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.\n  </p>\n\n  <button ion-button secondary menuToggle>Toggle Menu</button>\n</ion-content>\n'/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Accueil</ion-title>\n  </ion-navbar>\n</ion-header>\n\n   <!-- <pre *ngIf="info">{{ info | json}}</pre> -->\n<ion-content class="card-background-page">\n   <ion-card  *ngIf="info">  \n    <img src="assets/imgs/spacex.jpg"/>\n    <div class="card-title">{{ info.name }}</div>\n    <div class="card-subtitle">{{ info.founder }}</div>\n  </ion-card>\n\n  <ion-card *ngIf="info">\n    <ion-card-content>\n      {{ info.summary }}\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
     ], HomePage);
     return HomePage;
 }());
@@ -360,7 +374,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_spacex_api_spacex_api__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_spacex_api_spacex_api__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_common_http__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_launch_list_launch_list__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_launch_details_launch_details__ = __webpack_require__(101);
@@ -411,8 +425,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/launch-details/launch-details.module#LaunchDetailsPageModule', name: 'LaunchDetailsPage', segment: 'launch-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/launch-list/launch-list.module#LaunchListPageModule', name: 'LaunchListPage', segment: 'launch-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/next-launch/next-launch.module#NextLaunchPageModule', name: 'NextLaunchPage', segment: 'next-launch', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/rocket-details/rocket-details.module#RocketDetailsPageModule', name: 'RocketDetailsPage', segment: 'rocket-details', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/rocket/rocket.module#RocketPageModule', name: 'RocketPage', segment: 'rocket', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/rocket/rocket.module#RocketPageModule', name: 'RocketPage', segment: 'rocket', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/rocket-details/rocket-details.module#RocketDetailsPageModule', name: 'RocketDetailsPage', segment: 'rocket-details', priority: 'low', defaultHistory: [] }
                     ]
                 }),
             ],
@@ -442,6 +456,86 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 26:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpacexApiProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/*
+  Generated class for the SpacexApiProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var SpacexApiProvider = /** @class */ (function () {
+    function SpacexApiProvider(http) {
+        this.http = http;
+        this.baseUrl = 'https://api.spacexdata.com/v2';
+    }
+    // Récuperer liste des prochains lancements 
+    SpacexApiProvider.prototype.getNextLaunches = function () {
+        var endpointUrl = this.baseUrl + "/launches/upcoming";
+        return this.http.get(endpointUrl);
+    };
+    // Récuperer les détails du prochain lancement 
+    SpacexApiProvider.prototype.getNextLaunch = function () {
+        var endpointUrl = this.baseUrl + "/launches/next";
+        console.log(endpointUrl);
+        return this.http.get(endpointUrl);
+    };
+    // Récuperer tous les lancements 
+    SpacexApiProvider.prototype.getAllLaunches = function () {
+        var endpointUrl = this.baseUrl + "/launches/all";
+        return this.http.get(endpointUrl);
+    };
+    // Recuperer détails d'un lancement 
+    SpacexApiProvider.prototype.getLaunch = function (id) {
+        var endpointUrl = this.baseUrl + "/launches/all?flight_number=" + id;
+        console.log(endpointUrl);
+        return this.http.get(endpointUrl);
+    };
+    // Recuperer la liste des rockets
+    SpacexApiProvider.prototype.getAllRockets = function () {
+        var endpointUrl = this.baseUrl + "/rockets";
+        console.log(endpointUrl);
+        return this.http.get(endpointUrl);
+    };
+    // Recuperer détails d'une rocket
+    SpacexApiProvider.prototype.getRocket = function (name) {
+        var endpointUrl = this.baseUrl + "/rockets/" + name;
+        console.log(endpointUrl);
+        return this.http.get(endpointUrl);
+    };
+    // Récuperer les informations de SpaceX
+    SpacexApiProvider.prototype.getInfoSpaceX = function () {
+        var endpointUrl = this.baseUrl + "/info";
+        console.log(endpointUrl);
+        return this.http.get(endpointUrl);
+    };
+    SpacexApiProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+    ], SpacexApiProvider);
+    return SpacexApiProvider;
+}());
+
+//# sourceMappingURL=spacex-api.js.map
+
+/***/ }),
+
 /***/ 272:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -452,7 +546,7 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_spacex_api_spacex_api__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_spacex_api_spacex_api__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_launch_list_launch_list__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_next_launch_next_launch__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_rocket_rocket__ = __webpack_require__(104);
@@ -491,6 +585,7 @@ var MyApp = /** @class */ (function () {
         this.initializeApp();
         // used for an example of ngFor and navigation
         this.pages = [
+            { title: 'Accueil', component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */] },
             { title: 'Liste lancements', component: __WEBPACK_IMPORTED_MODULE_6__pages_launch_list_launch_list__["a" /* LaunchListPage */] },
             // { title: 'List', component: ListPage },
             // { title: 'detail', component: LaunchDetailsPage},
@@ -588,80 +683,6 @@ var ListPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 29:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpacexApiProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/*
-  Generated class for the SpacexApiProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-var SpacexApiProvider = /** @class */ (function () {
-    function SpacexApiProvider(http) {
-        this.http = http;
-        this.baseUrl = 'https://api.spacexdata.com/v2';
-    }
-    // Récuperer liste des prochains lancements 
-    SpacexApiProvider.prototype.getNextLaunches = function () {
-        var endpointUrl = this.baseUrl + "/launches/upcoming";
-        return this.http.get(endpointUrl);
-    };
-    // Récuperer les détails du prochain lancement 
-    SpacexApiProvider.prototype.getNextLaunch = function () {
-        var endpointUrl = this.baseUrl + "/launches/next";
-        console.log(endpointUrl);
-        return this.http.get(endpointUrl);
-    };
-    // Récuperer tous les lancements 
-    SpacexApiProvider.prototype.getAllLaunches = function () {
-        var endpointUrl = this.baseUrl + "/launches/all";
-        return this.http.get(endpointUrl);
-    };
-    // Recuperer détails d'un lancement 
-    SpacexApiProvider.prototype.getLaunch = function (id) {
-        var endpointUrl = this.baseUrl + "/launches/all?flight_number=" + id;
-        console.log(endpointUrl);
-        return this.http.get(endpointUrl);
-    };
-    // Recuperer la liste des rockets
-    SpacexApiProvider.prototype.getAllRockets = function () {
-        var endpointUrl = this.baseUrl + "/rockets";
-        console.log(endpointUrl);
-        return this.http.get(endpointUrl);
-    };
-    // Recuperer détails d'une rocket
-    SpacexApiProvider.prototype.getRocket = function (name) {
-        var endpointUrl = this.baseUrl + "/rockets/" + name;
-        console.log(endpointUrl);
-        return this.http.get(endpointUrl);
-    };
-    SpacexApiProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
-    ], SpacexApiProvider);
-    return SpacexApiProvider;
-}());
-
-//# sourceMappingURL=spacex-api.js.map
-
-/***/ }),
-
 /***/ 51:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -669,7 +690,7 @@ var SpacexApiProvider = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RocketDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__ = __webpack_require__(26);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
