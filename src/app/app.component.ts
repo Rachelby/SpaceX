@@ -4,13 +4,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { SpacexApiProvider } from '../providers/spacex-api/spacex-api';
 import { LaunchListPage } from '../pages/launch-list/launch-list';
-import { LaunchDetailsPage } from '../pages/launch-details/launch-details';
 import { NextLaunchPage } from '../pages/next-launch/next-launch';
 import { RocketPage } from '../pages/rocket/rocket';
-import { RocketDetailsPage } from '../pages/rocket-details/rocket-details';
 
 @Component({
   templateUrl: 'app.html'
@@ -44,8 +41,6 @@ export class MyApp {
     this.pages = [
       { title: 'Accueil', component: HomePage },
       { title: 'Liste lancements', component: LaunchListPage },
-      // { title: 'List', component: ListPage },
-      // { title: 'detail', component: LaunchDetailsPage},
       { title: 'Prochain lancement', component: NextLaunchPage},
       { title: 'Rockets', component: RocketPage}
     ];

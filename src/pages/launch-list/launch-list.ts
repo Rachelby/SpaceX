@@ -28,7 +28,6 @@ export class LaunchListPage {
   }
 
   getLaunch(id:string) {
-    console.log(id);
     this.navCtrl.push(LaunchDetailsPage, id); 
   }
 

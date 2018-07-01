@@ -64,4 +64,10 @@ export class SpacexApiProvider {
     return this.http.get<Observable<any>>(endpointUrl);
   }
 
+  getCapsule(name : string) : Observable<any> {
+    const endpointUrl = `${this.baseUrl}/capsules/${name}`;
+    console.log(endpointUrl);
+    return this.http.get<Observable<any>>(endpointUrl);
+  }
+
 }

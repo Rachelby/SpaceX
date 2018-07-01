@@ -12,13 +12,17 @@
     <!-- <pre *ngIf="launch">{{launch | json}}</pre> -->
     <ion-card  *ngIf="launch">  
       <ion-item>
-        <ion-icon name="" item-start large></ion-icon>
-        <h2>Mission {{launch.mission_name}}</h2>
+        <ion-avatar item-start>
+          <img src="assets/imgs/spacex.jpg"/>
+        </ion-avatar> 
+        <h2> {{ launch.mission_name }}</h2>
         <p>Lancement #{{launch.flight_number}}</p>
         <p>le {{ launch.launch_date_local | date: 'dd/MM/yyyy H:mm' }}</p>
       </ion-item>
+      <img src="assets/imgs/spacex.jpg"/>
   
       
+
       <!-- <img src="{{launch.links.mission_patch}}"/> -->
     
       <ion-card-content>

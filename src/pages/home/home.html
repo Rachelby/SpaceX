@@ -12,7 +12,9 @@
    <ion-card  *ngIf="info">  
     <img src="assets/imgs/spacex.jpg"/>
     <div class="card-title">{{ info.name }}</div>
-    <div class="card-subtitle">{{ info.founder }}</div>
+    <!-- <div class="card-subtitle">{{ info.founder }}</div> -->
+    
+    <div (click)="nextLaunch()" class="card-subtitle">Prochain lancement dans {{ jours }} j {{ heures }} h {{ minutes }} m {{ secondes }} s </div>
   </ion-card>
 
   <ion-card *ngIf="info">
