@@ -1,14 +1,14 @@
 webpackJsonp([4],{
 
-/***/ 282:
+/***/ 286:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LaunchDetailsPageModule", function() { return LaunchDetailsPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LaunchpadDetailsPageModule", function() { return LaunchpadDetailsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__launch_details__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__launchpad_details__ = __webpack_require__(104);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var LaunchDetailsPageModule = /** @class */ (function () {
-    function LaunchDetailsPageModule() {
+var LaunchpadDetailsPageModule = /** @class */ (function () {
+    function LaunchpadDetailsPageModule() {
     }
-    LaunchDetailsPageModule = __decorate([
+    LaunchpadDetailsPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__launch_details__["a" /* LaunchDetailsPage */],
+                __WEBPACK_IMPORTED_MODULE_2__launchpad_details__["a" /* LaunchpadDetailsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__launch_details__["a" /* LaunchDetailsPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__launchpad_details__["a" /* LaunchpadDetailsPage */]),
             ],
         })
-    ], LaunchDetailsPageModule);
-    return LaunchDetailsPageModule;
+    ], LaunchpadDetailsPageModule);
+    return LaunchpadDetailsPageModule;
 }());
 
-//# sourceMappingURL=launch-details.module.js.map
+//# sourceMappingURL=launchpad-details.module.js.map
 
 /***/ })
 

@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Détails de la base</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <!-- <pre *ngIf="launchpad">{{launchpad | json}}</pre> -->
+    <ion-card  *ngIf="launchpad">  
+      <ion-item>
+        
+        <h2> {{ launchpad.full_name }}</h2>
+        <!-- <p></p> -->
+       
+      </ion-item>
+      
+      <ion-card-content>
+        {{ launchpad.details }}
+      </ion-card-content>
+  
+    </ion-card>
+    <ion-card  *ngIf="launchpad">  
+        <ion-item>
+          <p> Localisation : </p> {{ launchpad.location.name }}
+          <p>Region : </p> {{ launchpad.location.region }} 
+          <p>Latitude : </p> {{ launchpad.location.latitude }}
+          <p>Longitude : </p> {{ launchpad.location.longitude }}
+        </ion-item>
+        
+        <ion-row>
+          <ion-col>
+            
+          </ion-col>
+        </ion-row>
+      
+      </ion-card>
+  
+    
+  </ion-content>

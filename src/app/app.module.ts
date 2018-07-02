@@ -15,6 +15,8 @@ import { LaunchDetailsPage } from '../pages/launch-details/launch-details';
 import { NextLaunchPage } from '../pages/next-launch/next-launch';
 import { RocketPage } from '../pages/rocket/rocket';
 import { RocketDetailsPage } from '../pages/rocket-details/rocket-details';
+import { LaunchpadsListPage } from '../pages/launchpads-list/launchpads-list';
+import { LaunchpadDetailsPage } from '../pages/launchpad-details/launchpad-details';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { RocketDetailsPage } from '../pages/rocket-details/rocket-details';
     LaunchDetailsPage, 
     NextLaunchPage,
     RocketPage, 
-    RocketDetailsPage
+    RocketDetailsPage, 
+    LaunchpadsListPage,
+    LaunchpadDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import { RocketDetailsPage } from '../pages/rocket-details/rocket-details';
     LaunchDetailsPage,
     NextLaunchPage, 
     RocketPage, 
-    RocketDetailsPage
+    RocketDetailsPage, 
+    LaunchpadsListPage,
+    LaunchpadDetailsPage
   ],
   providers: [
     StatusBar,

@@ -8,6 +8,7 @@ import { SpacexApiProvider } from '../providers/spacex-api/spacex-api';
 import { LaunchListPage } from '../pages/launch-list/launch-list';
 import { NextLaunchPage } from '../pages/next-launch/next-launch';
 import { RocketPage } from '../pages/rocket/rocket';
+import { LaunchpadsListPage } from '../pages/launchpads-list/launchpads-list';
 
 @Component({
   templateUrl: 'app.html'
@@ -42,7 +43,8 @@ export class MyApp {
       { title: 'Accueil', component: HomePage },
       { title: 'Liste lancements', component: LaunchListPage },
       { title: 'Prochain lancement', component: NextLaunchPage},
-      { title: 'Rockets', component: RocketPage}
+      { title: 'Rockets', component: RocketPage},
+      { title: 'Bases de lancement', component: LaunchpadsListPage}
     ];
 
   }
