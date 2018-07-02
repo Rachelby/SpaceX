@@ -10,39 +10,44 @@
 
 <ion-content padding>
   
-<!-- Search bar -->
-  <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      {{ item }}
-    </ion-item>
-  </ion-list> -->
+  <!-- Search bar -->
+    <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list>
+      <ion-item *ngFor="let item of items">
+        {{ item }}
+      </ion-item>
+    </ion-list> -->
   <!-- End search bar -->
 
-  <ion-card  *ngFor="let launch of launches">
-    <img src="{{launch.links.mission_patch_small}}"/>
-    <ion-card-content>
-      <ion-card-title>
-        {{launch.mission_name}}
+  <div *ngFor="let launch of launches">
+    <ion-card *ngIf="launch.details != null">
+      <ion-card-content>
+        <ion-card-title>
+          {{launch.mission_name}}
         </ion-card-title>
-      <p>
-        {{launch.details}}
-      </p>
+        <img src="{{launch.links.mission_patch_small}}"/>
+        <p>
+         
+          {{ (launch.details | slice:0:50)  }}
+          <a (click)='getLaunch(launch.flight_number)'>Lire la suite</a>
+        </p>
+  
 
-      <ion-row no-padding>
-        <ion-col text-right>
-            <button (click)="getLaunch(launch.flight_number)" ion-button clear small color="danger" icon-start>
-              <ion-icon name='md-eye'></ion-icon>
-              Détails
+        <ion-row no-padding>
+          <ion-col text-right>
+              <button (click)="getLaunch(launch.flight_number)" ion-button clear small color="danger" icon-start>
+                <ion-icon name='md-eye'></ion-icon>
+                Détails
+              </button>
+            </ion-col>
+          <ion-col>
+            <button ion-button clear small color="danger" icon-start>
+              <ion-icon name='star'></ion-icon>
+              Favoris
             </button>
           </ion-col>
-        <ion-col>
-          <button ion-button clear small color="danger" icon-start>
-            <ion-icon name='star'></ion-icon>
-            Favoris
-          </button>
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

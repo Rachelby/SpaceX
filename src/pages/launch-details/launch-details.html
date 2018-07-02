@@ -10,9 +10,7 @@
 
 <ion-content padding>
   <!-- <pre *ngIf="launch">{{launch | json}}</pre> -->
-  <ion-card  *ngIf="launch">  
-
-
+  <ion-card  *ngIf="launch" >  
     <ion-item>
       <ion-avatar item-start>
         <img src="{{launch[0].links.mission_patch_small}}">
@@ -24,9 +22,9 @@
     
     
     <img src="{{launch[0].links.mission_patch}}">
-  
+    
     <ion-card-content>
-      <p>{{ launch[0].details }}</p>
+      {{ launch[0].details }}
     </ion-card-content>
 
     <ion-row>
@@ -36,12 +34,7 @@
           <div>Roquette</div>
         </button>
       </ion-col>
-      <ion-col>
-        <button ion-button icon-start clear small>
-          <ion-icon name="text"></ion-icon>
-          <div>4 Comments</div>
-        </button>
-      </ion-col>
+     
       <ion-col center text-center>
         <ion-note>
           11h ago

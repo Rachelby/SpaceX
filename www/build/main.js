@@ -52,7 +52,7 @@ var LaunchDetailsPage = /** @class */ (function () {
     };
     LaunchDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-launch-details',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\launch-details\launch-details.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Détails du lancement</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <!-- <pre *ngIf="launch">{{launch | json}}</pre> -->\n  <ion-card  *ngIf="launch">  \n\n\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="{{launch[0].links.mission_patch_small}}">\n      </ion-avatar>\n      <h2>Mission {{launch[0].mission_name}}</h2>\n      <p>Lancement #{{launch[0].flight_number}}</p>\n      <p>le {{ launch[0].launch_date_local | date: \'dd/MM/yyyy H:mm\' }}</p>\n    </ion-item>\n    \n    \n    <img src="{{launch[0].links.mission_patch}}">\n  \n    <ion-card-content>\n      <p>{{ launch[0].details }}</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button (click)="getRocket(launch[0].rocket.rocket_id)" ion-button icon-start clear small>\n          <ion-icon name="ios-jet"></ion-icon>\n          <div>Roquette</div>\n        </button>\n      </ion-col>\n      <ion-col>\n        <button ion-button icon-start clear small>\n          <ion-icon name="text"></ion-icon>\n          <div>4 Comments</div>\n        </button>\n      </ion-col>\n      <ion-col center text-center>\n        <ion-note>\n          11h ago\n        </ion-note>\n      </ion-col>\n    </ion-row>\n  \n  </ion-card>\n\n  \n</ion-content>'/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\launch-details\launch-details.html"*/,
+            selector: 'page-launch-details',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\launch-details\launch-details.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Détails du lancement</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <!-- <pre *ngIf="launch">{{launch | json}}</pre> -->\n  <ion-card  *ngIf="launch" >  \n    <ion-item>\n      <ion-avatar item-start>\n        <img src="{{launch[0].links.mission_patch_small}}">\n      </ion-avatar>\n      <h2>Mission {{launch[0].mission_name}}</h2>\n      <p>Lancement #{{launch[0].flight_number}}</p>\n      <p>le {{ launch[0].launch_date_local | date: \'dd/MM/yyyy H:mm\' }}</p>\n    </ion-item>\n    \n    \n    <img src="{{launch[0].links.mission_patch}}">\n    \n    <ion-card-content>\n      {{ launch[0].details }}\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button (click)="getRocket(launch[0].rocket.rocket_id)" ion-button icon-start clear small>\n          <ion-icon name="ios-jet"></ion-icon>\n          <div>Roquette</div>\n        </button>\n      </ion-col>\n     \n      <ion-col center text-center>\n        <ion-note>\n          11h ago\n        </ion-note>\n      </ion-col>\n    </ion-row>\n  \n  </ion-card>\n\n  \n</ion-content>'/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\launch-details\launch-details.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
@@ -111,7 +111,7 @@ var LaunchListPage = /** @class */ (function () {
     };
     LaunchListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-launch-list',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\launch-list\launch-list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Lancements</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  \n<!-- Search bar -->\n  <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n  <ion-list>\n    <ion-item *ngFor="let item of items">\n      {{ item }}\n    </ion-item>\n  </ion-list> -->\n  <!-- End search bar -->\n\n  <ion-card  *ngFor="let launch of launches">\n    <img src="{{launch.links.mission_patch_small}}"/>\n    <ion-card-content>\n      <ion-card-title>\n        {{launch.mission_name}}\n        </ion-card-title>\n      <p>\n        {{launch.details}}\n      </p>\n\n      <ion-row no-padding>\n        <ion-col text-right>\n            <button (click)="getLaunch(launch.flight_number)" ion-button clear small color="danger" icon-start>\n              <ion-icon name=\'md-eye\'></ion-icon>\n              Détails\n            </button>\n          </ion-col>\n        <ion-col>\n          <button ion-button clear small color="danger" icon-start>\n            <ion-icon name=\'star\'></ion-icon>\n            Favoris\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\launch-list\launch-list.html"*/,
+            selector: 'page-launch-list',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\launch-list\launch-list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Lancements</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  \n  <!-- Search bar -->\n    <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n    <ion-list>\n      <ion-item *ngFor="let item of items">\n        {{ item }}\n      </ion-item>\n    </ion-list> -->\n  <!-- End search bar -->\n\n  <div *ngFor="let launch of launches">\n    <ion-card *ngIf="launch.details != null">\n      <ion-card-content>\n        <ion-card-title>\n          {{launch.mission_name}}\n        </ion-card-title>\n        <img src="{{launch.links.mission_patch_small}}"/>\n        <p>\n         \n          {{ (launch.details | slice:0:50)  }}\n          <a (click)=\'getLaunch(launch.flight_number)\'>Lire la suite</a>\n        </p>\n  \n\n        <ion-row no-padding>\n          <ion-col text-right>\n              <button (click)="getLaunch(launch.flight_number)" ion-button clear small color="danger" icon-start>\n                <ion-icon name=\'md-eye\'></ion-icon>\n                Détails\n              </button>\n            </ion-col>\n          <ion-col>\n            <button ion-button clear small color="danger" icon-start>\n              <ion-icon name=\'star\'></ion-icon>\n              Favoris\n            </button>\n          </ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </div>\n</ion-content>'/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\launch-list\launch-list.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
@@ -218,11 +218,11 @@ var map = {
 		2
 	],
 	"../pages/rocket-details/rocket-details.module": [
-		286,
+		285,
 		1
 	],
 	"../pages/rocket/rocket.module": [
-		285,
+		286,
 		0
 	]
 };
@@ -409,8 +409,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/launch-details/launch-details.module#LaunchDetailsPageModule', name: 'LaunchDetailsPage', segment: 'launch-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/launch-list/launch-list.module#LaunchListPageModule', name: 'LaunchListPage', segment: 'launch-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/next-launch/next-launch.module#NextLaunchPageModule', name: 'NextLaunchPage', segment: 'next-launch', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/rocket/rocket.module#RocketPageModule', name: 'RocketPage', segment: 'rocket', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/rocket-details/rocket-details.module#RocketDetailsPageModule', name: 'RocketDetailsPage', segment: 'rocket-details', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/rocket-details/rocket-details.module#RocketDetailsPageModule', name: 'RocketDetailsPage', segment: 'rocket-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/rocket/rocket.module#RocketPageModule', name: 'RocketPage', segment: 'rocket', priority: 'low', defaultHistory: [] }
                     ]
                 }),
             ],
@@ -482,19 +482,18 @@ var SpacexApiProvider = /** @class */ (function () {
     };
     // Récuperer tous les lancements 
     SpacexApiProvider.prototype.getAllLaunches = function () {
-        var endpointUrl = this.baseUrl + "/launches/all";
+        var endpointUrl = this.baseUrl + "/launches/all?order=desc";
         return this.http.get(endpointUrl);
     };
     // Recuperer détails d'un lancement 
     SpacexApiProvider.prototype.getLaunch = function (id) {
         var endpointUrl = this.baseUrl + "/launches/all?flight_number=" + id;
-        console.log(endpointUrl);
+        // console.log(endpointUrl);
         return this.http.get(endpointUrl);
     };
     // Recuperer la liste des rockets
     SpacexApiProvider.prototype.getAllRockets = function () {
         var endpointUrl = this.baseUrl + "/rockets";
-        console.log(endpointUrl);
         return this.http.get(endpointUrl);
     };
     // Recuperer détails d'une rocket
@@ -764,20 +763,54 @@ var NextLaunchPage = /** @class */ (function () {
         this.spacexApi.getNextLaunch().subscribe(function (data) {
             _this.launch = data;
             // console.log(JSON.stringify(this.launch));
+            _this.getCompteur();
         });
     }
+    NextLaunchPage.prototype.getCompteur = function () {
+        var _this = this;
+        this.spacexApi.getNextLaunch().subscribe(function (data) {
+            _this.time = Math.round(data.launch_date_unix - new Date().getTime() / 1000);
+            // this.difference = Math.round(1530482241 - new Date().getTime()/1000); 
+            _this.jours = Math.round(_this.time / 86400);
+            var reste = (_this.time % 86400);
+            _this.heures = Math.round(reste / 3600);
+            reste = (_this.time % 3600);
+            _this.minutes = Math.round(reste / 60);
+            reste = _this.time % 60;
+            _this.secondes = Math.round(reste % 60);
+            console.log(_this.time);
+        });
+    };
+    NextLaunchPage.prototype.ngOnInit = function () {
+        var _this = this;
+        setInterval(function () {
+            if (_this.secondes > 0)
+                _this.secondes--;
+            if (_this.secondes == 0) {
+                _this.secondes = 59;
+                _this.minutes--;
+            }
+            if (_this.minutes == 0) {
+                _this.minutes = 59;
+                _this.heures--;
+            }
+            if (_this.heures == 0) {
+                _this.heures = 23;
+                _this.jours--;
+            }
+        }, 1000);
+    };
     NextLaunchPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad NextLaunchPage');
     };
     NextLaunchPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-next-launch',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\next-launch\next-launch.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Prochain lancement</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  \n  <ion-content padding>\n    <!-- <pre *ngIf="launch">{{launch | json}}</pre> -->\n    <ion-card  *ngIf="launch">  \n      <ion-item>\n        <ion-avatar item-start>\n          <img src="assets/imgs/spacex.jpg"/>\n        </ion-avatar> \n        <h2> {{ launch.mission_name }}</h2>\n        <p>Lancement #{{launch.flight_number}}</p>\n        <p>le {{ launch.launch_date_local | date: \'dd/MM/yyyy H:mm\' }}</p>\n      </ion-item>\n      <img src="assets/imgs/spacex.jpg"/>\n  \n      \n\n      <!-- <img src="{{launch.links.mission_patch}}"/> -->\n    \n      <ion-card-content>\n          <p>{{ launch.details }}</p>\n        </ion-card-content>\n      <ion-item>\n      <ion-icon name="" item-start large ></ion-icon>\n        <h2></h2>\n        <p></p>\n      </ion-item>\n    \n      <ion-item>\n        <span item-start></span>\n        <span item-start></span>\n        <button ion-button icon-start clear item-end>\n          <ion-icon name="navigate"></ion-icon>\n          Suivre\n        </button>\n      </ion-item>\n    \n    </ion-card>\n  \n  </ion-content>'/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\next-launch\next-launch.html"*/,
+            selector: 'page-next-launch',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\next-launch\next-launch.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Prochain lancement</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  \n \n  <ion-content class="card-background-page">\n      <!-- <pre *ngIf="launch">{{ launch | json}}</pre> -->\n\n      <ion-card  *ngIf="launch">  \n       <img src="assets/imgs/spacex.jpg"/>\n       <div class="card-title">{{ jours }} j {{ heures }} h {{ minutes }} m {{ secondes }} s</div>\n      \n       <div class="card-subtitle">{{ launch.mission_name }} </div>\n     </ion-card>\n   \n     <ion-card *ngIf="launch">\n       <ion-card-content>\n        <p>{{ launch.details }}</p>\n        <p>le {{ launch.launch_date_local | date: \'dd/MM/yyyy H:mm\' }}</p>\n        <p>{{ launch.launch_site.site_name_long}}</p>\n       </ion-card-content>\n     </ion-card>\n     <ion-card *ngIf="launch">\n        <ion-card-content>\n          <h2> Détails sur la rocket </h2>\n          <p>{{ launch.rocket.rocket_name }}</p>\n        </ion-card-content>\n      </ion-card>\n   \n   </ion-content>\n\n   '/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\next-launch\next-launch.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */]) === "function" && _c || Object])
     ], NextLaunchPage);
     return NextLaunchPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=next-launch.js.map

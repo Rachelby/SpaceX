@@ -24,12 +24,12 @@ export class HomePage {
       this.spacexApi.getInfoSpaceX().subscribe(data => {
       this.info = data;
       // console.log(this.info);
-      this.getNextLaunch();
+      this.getCompteur();
 
     })
   }
 
-  getNextLaunch(){
+  getCompteur(){
     this.spacexApi.getNextLaunch().subscribe(data => {
       this.time = Math.round(data.launch_date_unix - new Date().getTime()/1000); 
 

@@ -32,21 +32,20 @@ export class SpacexApiProvider {
 
   // Récuperer tous les lancements 
   getAllLaunches(): Observable<any> {
-    const endpointUrl = `${this.baseUrl}/launches/all`;
+    const endpointUrl = `${this.baseUrl}/launches/all?order=desc`;
     return this.http.get<Observable<any>>(endpointUrl);
   }
 
   // Recuperer détails d'un lancement 
   getLaunch(id : string): Observable<any> {
     const endpointUrl = `${this.baseUrl}/launches/all?flight_number=${id}`;
-    console.log(endpointUrl);
+    // console.log(endpointUrl);
     return this.http.get<Observable<any>>(endpointUrl);
   }
 
   // Recuperer la liste des rockets
   getAllRockets(): Observable<any> {
     const endpointUrl = `${this.baseUrl}/rockets`;
-    console.log(endpointUrl);
     return this.http.get<Observable<any>>(endpointUrl);
   }
   

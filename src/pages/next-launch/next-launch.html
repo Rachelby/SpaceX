@@ -8,41 +8,31 @@
   </ion-header>
   
   
-  <ion-content padding>
-    <!-- <pre *ngIf="launch">{{launch | json}}</pre> -->
-    <ion-card  *ngIf="launch">  
-      <ion-item>
-        <ion-avatar item-start>
-          <img src="assets/imgs/spacex.jpg"/>
-        </ion-avatar> 
-        <h2> {{ launch.mission_name }}</h2>
-        <p>Lancement #{{launch.flight_number}}</p>
-        <p>le {{ launch.launch_date_local | date: 'dd/MM/yyyy H:mm' }}</p>
-      </ion-item>
-      <img src="assets/imgs/spacex.jpg"/>
-  
-      
+ 
+  <ion-content class="card-background-page">
+      <!-- <pre *ngIf="launch">{{ launch | json}}</pre> -->
 
-      <!-- <img src="{{launch.links.mission_patch}}"/> -->
-    
-      <ion-card-content>
-          <p>{{ launch.details }}</p>
+      <ion-card  *ngIf="launch">  
+       <img src="assets/imgs/spacex.jpg"/>
+       <div class="card-title">{{ jours }} j {{ heures }} h {{ minutes }} m {{ secondes }} s</div>
+      
+       <div class="card-subtitle">{{ launch.mission_name }} </div>
+     </ion-card>
+   
+     <ion-card *ngIf="launch">
+       <ion-card-content>
+        <p>{{ launch.details }}</p>
+        <p>le {{ launch.launch_date_local | date: 'dd/MM/yyyy H:mm' }}</p>
+        <p>{{ launch.launch_site.site_name_long}}</p>
+       </ion-card-content>
+     </ion-card>
+     <ion-card *ngIf="launch">
+        <ion-card-content>
+          <h2> Détails sur la rocket </h2>
+          <p>{{ launch.rocket.rocket_name }}</p>
         </ion-card-content>
-      <ion-item>
-      <ion-icon name="" item-start large ></ion-icon>
-        <h2></h2>
-        <p></p>
-      </ion-item>
-    
-      <ion-item>
-        <span item-start></span>
-        <span item-start></span>
-        <button ion-button icon-start clear item-end>
-          <ion-icon name="navigate"></ion-icon>
-          Suivre
-        </button>
-      </ion-item>
-    
-    </ion-card>
-  
-  </ion-content>
+      </ion-card>
+   
+   </ion-content>
+
+   

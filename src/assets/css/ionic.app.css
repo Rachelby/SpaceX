@@ -9531,5 +9531,9 @@ a.button {
   transition-duration: 0s; }
 
 
+  justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
 
 /*# sourceMappingURL=ionic.app.css.map */
