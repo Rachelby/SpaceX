@@ -25700,7 +25700,7 @@ ion-navbar.toolbar {
   color: #fff;
 }
 
-.card-background-page {
+.card-background-page, .scroll-content {
   background-image: url("/assets/imgs/bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -25708,9 +25708,31 @@ ion-navbar.toolbar {
   height: 100%;
 }
 
+.card-content {
+  background-color: transparent;
+}
+
+.card-title-ios {
+  color: white;
+}
+
 .bg-color {
   color: #fff;
   background-color: transparent;
+}
+
+.card-content {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.item-ios {
+  color: #fff;
+  background-color: transparent;
+}
+
+.item-ios h2 {
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .rocket-loader {
@@ -25892,4 +25914,25 @@ ion-navbar.toolbar {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
   }
+}
+
+.card-ios {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: 8px 5px 5px rgba(255, 255, 255, 0.1);
+  box-shadow: 8px 5px 5px rgba(255, 255, 255, 0.1);
+}
+
+.card-ios p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card-ios a {
+  color: white;
+  font-weight: bold;
+}
+
+.button-clear.button-clear {
+  color: #f53d3d;
+  font-weight: bold;
 }

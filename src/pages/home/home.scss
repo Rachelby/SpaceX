@@ -2,22 +2,46 @@ page-home {
   
 }
 
-.card-background-page
+.card-background-page, .scroll-content
 {
   background-image: url('/assets/imgs/bg.jpg');
    background-position: center;
     background-repeat: no-repeat;
    background-size: cover;
-
   height: 100%;
 
 }
 
+.card-content {
+  background-color: transparent;
+}
+
+.card-title-ios {
+  color:white;
+}
 .bg-color
 {
   color:#fff;
   background-color: transparent;
 }
+
+.card-content {
+  color: rgba(255,255,255,0.7);
+ 
+}
+
+.item-ios {
+  color:#fff;
+  background-color: transparent;
+}
+
+.item-ios h2 {
+  color:#fff;
+  text-transform : uppercase;
+}
+
+
+
 
 .rocket-loader {
 	position: absolute;
