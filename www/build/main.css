@@ -25699,3 +25699,8 @@ ion-navbar.toolbar {
   width: 100%;
   color: #fff;
 }
+
+.customborder {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
