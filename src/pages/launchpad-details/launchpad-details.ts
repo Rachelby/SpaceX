@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpacexApiProvider } from '../../providers/spacex-api/spacex-api';
+import leaflet from 'leaflet';
 
 /**
  * Generated class for the LaunchpadDetailsPage page.
@@ -17,6 +18,7 @@ import { SpacexApiProvider } from '../../providers/spacex-api/spacex-api';
 export class LaunchpadDetailsPage {
   launchpad: any;
   id : any;
+  map: any;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -30,5 +32,4 @@ export class LaunchpadDetailsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LaunchpadDetailsPage');
   }
-
 }

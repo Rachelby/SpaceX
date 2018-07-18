@@ -4,65 +4,6 @@ webpackJsonp([7],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchListPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__launch_details_launch_details__ = __webpack_require__(103);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/**
- * Generated class for the LaunchListPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var LaunchListPage = /** @class */ (function () {
-    function LaunchListPage(navCtrl, navParams, spacexApi) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.spacexApi = spacexApi;
-        this.spacexApi.getAllLaunches().subscribe(function (data) {
-            _this.launches = data;
-        });
-    }
-    LaunchListPage.prototype.getLaunch = function (id) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__launch_details_launch_details__["a" /* LaunchDetailsPage */], id);
-    };
-    LaunchListPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad LaunchListPage');
-    };
-    LaunchListPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-launch-list',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\launch-list\launch-list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Lancements</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  \n  <!-- Search bar -->\n    <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n    <ion-list>\n      <ion-item *ngFor="let item of items">\n        {{ item }}\n      </ion-item>\n    </ion-list> -->\n  <!-- End search bar -->\n\n  <div *ngFor="let launch of launches">\n    <ion-card *ngIf="launch.details != null">\n      <ion-card-content>\n        <ion-card-title>\n          {{launch.mission_name}}\n        </ion-card-title>\n        <img src="{{launch.links.mission_patch_small}}"/>\n        <p>\n         \n          {{ (launch.details | slice:0:50)  }}\n          <a (click)=\'getLaunch(launch.flight_number)\'>Lire la suite</a>\n        </p>\n  \n\n        <ion-row no-padding>\n          <ion-col text-right>\n              <button (click)="getLaunch(launch.flight_number)" ion-button clear small color="danger" icon-start>\n                <ion-icon name=\'md-eye\'></ion-icon>\n                Détails\n              </button>\n            </ion-col>\n          <ion-col>\n            <button ion-button clear small color="danger" icon-start>\n              <ion-icon name=\'star\'></ion-icon>\n              Favoris\n            </button>\n          </ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </div>\n</ion-content>'/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\launch-list\launch-list.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
-    ], LaunchListPage);
-    return LaunchListPage;
-}());
-
-//# sourceMappingURL=launch-list.js.map
-
-/***/ }),
-
-/***/ 103:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
@@ -124,7 +65,7 @@ var LaunchDetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 104:
+/***/ 103:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -166,7 +107,7 @@ var LaunchpadDetailsPage = /** @class */ (function () {
     };
     LaunchpadDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-launchpad-details',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\launchpad-details\launchpad-details.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Détails de la base</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  \n  <ion-content padding>\n    <!-- <pre *ngIf="launchpad">{{launchpad | json}}</pre> -->\n    <ion-card  *ngIf="launchpad">  \n      <ion-item>\n        \n        <h2> {{ launchpad.full_name }}</h2>\n        <!-- <p></p> -->\n       \n      </ion-item>\n      \n      <ion-card-content>\n        {{ launchpad.details }}\n      </ion-card-content>\n  \n    </ion-card>\n    <ion-card  *ngIf="launchpad">  \n        <ion-item>\n          <p> Localisation : </p> {{ launchpad.location.name }}\n          <p>Region : </p> {{ launchpad.location.region }} \n          <p>Latitude : </p> {{ launchpad.location.latitude }}\n          <p>Longitude : </p> {{ launchpad.location.longitude }}\n        </ion-item>\n        \n        <ion-row>\n          <ion-col>\n            \n          </ion-col>\n        </ion-row>\n      \n      </ion-card>\n  \n    \n  </ion-content>'/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\launchpad-details\launchpad-details.html"*/,
+            selector: 'page-launchpad-details',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\launchpad-details\launchpad-details.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Détails de la base</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  \n  <ion-content padding>\n    <!-- <pre *ngIf="launchpad">{{launchpad | json}}</pre> -->\n    <ion-card  *ngIf="launchpad">  \n      <ion-item>\n        \n        <h2> {{ launchpad.full_name }}</h2>\n        <!-- <p></p> -->\n       \n      </ion-item>\n      \n      <ion-card-content>\n        {{ launchpad.details }}\n      </ion-card-content>\n  \n    </ion-card>\n    <ion-card  *ngIf="launchpad">  \n        <ion-item>\n          <p> Localisation : </p> {{ launchpad.location.name }}\n          <p>Region : </p> {{ launchpad.location.region }} \n          <p>Latitude : </p> {{ launchpad.location.latitude }}\n          <p>Longitude : </p> {{ launchpad.location.longitude }}\n        </ion-item>\n\n        <!-- <ion-content>\n          <div id="map" style="width:100%; height:100%;"></div>\n        </ion-content> -->\n        \n        <ion-row>\n          <ion-col>\n            \n          </ion-col>\n        </ion-row>\n      \n      </ion-card>\n  \n    \n  </ion-content>'/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\launchpad-details\launchpad-details.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
@@ -179,14 +120,14 @@ var LaunchpadDetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 105:
+/***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchpadsListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__launchpad_details_launchpad_details__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__launchpad_details_launchpad_details__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_spacex_api_spacex_api__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -235,6 +176,65 @@ var LaunchpadsListPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=launchpads-list.js.map
+
+/***/ }),
+
+/***/ 105:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchListPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__launch_details_launch_details__ = __webpack_require__(102);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the LaunchListPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var LaunchListPage = /** @class */ (function () {
+    function LaunchListPage(navCtrl, navParams, spacexApi) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.spacexApi = spacexApi;
+        this.spacexApi.getAllLaunches().subscribe(function (data) {
+            _this.launches = data;
+        });
+    }
+    LaunchListPage.prototype.getLaunch = function (id) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__launch_details_launch_details__["a" /* LaunchDetailsPage */], id);
+    };
+    LaunchListPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LaunchListPage');
+    };
+    LaunchListPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-launch-list',template:/*ion-inline-start:"C:\wamp\www\SpaceX\src\pages\launch-list\launch-list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Lancements</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  \n  <!-- Search bar -->\n    <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n    <ion-list>\n      <ion-item *ngFor="let item of items">\n        {{ item }}\n      </ion-item>\n    </ion-list> -->\n  <!-- End search bar -->\n\n  <div *ngFor="let launch of launches">\n    <ion-card *ngIf="launch.details != null">\n      <ion-card-content>\n        <ion-card-title>\n          {{launch.mission_name}}\n        </ion-card-title>\n        <img src="{{launch.links.mission_patch_small}}"/>\n        <p>\n         \n          {{ (launch.details | slice:0:50)  }}\n          <a (click)=\'getLaunch(launch.flight_number)\'>Lire la suite</a>\n        </p>\n  \n\n        <ion-row no-padding>\n          <ion-col text-right>\n              <button (click)="getLaunch(launch.flight_number)" ion-button clear small color="danger" icon-start>\n                <ion-icon name=\'md-eye\'></ion-icon>\n                Détails\n              </button>\n            </ion-col>\n          <ion-col>\n            <button ion-button clear small color="danger" icon-start>\n              <ion-icon name=\'star\'></ion-icon>\n              Favoris\n            </button>\n          </ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </div>\n</ion-content>'/*ion-inline-end:"C:\wamp\www\SpaceX\src\pages\launch-list\launch-list.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
+    ], LaunchListPage);
+    return LaunchListPage;
+}());
+
+//# sourceMappingURL=launch-list.js.map
 
 /***/ }),
 
@@ -320,19 +320,19 @@ webpackEmptyAsyncContext.id = 118;
 
 var map = {
 	"../pages/launch-details/launch-details.module": [
-		285,
+		284,
 		6
 	],
 	"../pages/launch-list/launch-list.module": [
-		284,
+		287,
 		5
 	],
 	"../pages/launchpad-details/launchpad-details.module": [
-		286,
+		285,
 		4
 	],
 	"../pages/launchpads-list/launchpads-list.module": [
-		287,
+		286,
 		3
 	],
 	"../pages/next-launch/next-launch.module": [
@@ -340,11 +340,11 @@ var map = {
 		2
 	],
 	"../pages/rocket-details/rocket-details.module": [
-		290,
+		289,
 		1
 	],
 	"../pages/rocket/rocket.module": [
-		289,
+		290,
 		0
 	]
 };
@@ -576,13 +576,13 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_spacex_api_spacex_api__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_common_http__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_launch_list_launch_list__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_launch_details_launch_details__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_launch_list_launch_list__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_launch_details_launch_details__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_next_launch_next_launch__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_rocket_rocket__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_rocket_details_rocket_details__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_launchpads_list_launchpads_list__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_launchpad_details_launchpad_details__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_launchpads_list_launchpads_list__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_launchpad_details_launchpad_details__ = __webpack_require__(103);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -628,13 +628,13 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/launch-list/launch-list.module#LaunchListPageModule', name: 'LaunchListPage', segment: 'launch-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/launch-details/launch-details.module#LaunchDetailsPageModule', name: 'LaunchDetailsPage', segment: 'launch-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/launchpad-details/launchpad-details.module#LaunchpadDetailsPageModule', name: 'LaunchpadDetailsPage', segment: 'launchpad-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/launchpads-list/launchpads-list.module#LaunchpadsListPageModule', name: 'LaunchpadsListPage', segment: 'launchpads-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/launch-list/launch-list.module#LaunchListPageModule', name: 'LaunchListPage', segment: 'launch-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/next-launch/next-launch.module#NextLaunchPageModule', name: 'NextLaunchPage', segment: 'next-launch', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/rocket/rocket.module#RocketPageModule', name: 'RocketPage', segment: 'rocket', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/rocket-details/rocket-details.module#RocketDetailsPageModule', name: 'RocketDetailsPage', segment: 'rocket-details', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/rocket-details/rocket-details.module#RocketDetailsPageModule', name: 'RocketDetailsPage', segment: 'rocket-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/rocket/rocket.module#RocketPageModule', name: 'RocketPage', segment: 'rocket', priority: 'low', defaultHistory: [] }
                     ]
                 }),
             ],
@@ -677,10 +677,10 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_spacex_api_spacex_api__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_launch_list_launch_list__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_launch_list_launch_list__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_next_launch_next_launch__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_rocket_rocket__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_launchpads_list_launchpads_list__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_launchpads_list_launchpads_list__ = __webpack_require__(104);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
