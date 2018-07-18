@@ -188,10 +188,11 @@ var LaunchpadDetailsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-launchpad-details',template:/*ion-inline-start:"C:\wamp64\www\SpaceX\src\pages\launchpad-details\launchpad-details.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <button ion-button menuToggle>\n\n        <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n      <ion-title>Détails de la base</ion-title>\n\n    </ion-navbar>\n\n  </ion-header>\n\n  \n\n  \n\n  <ion-content padding>\n\n    <!-- <pre *ngIf="launchpad">{{launchpad | json}}</pre> -->\n\n    <ion-card  *ngIf="launchpad">  \n\n      <ion-item>\n\n        \n\n        <h2> {{ launchpad.full_name }}</h2>\n\n        <!-- <p></p> -->\n\n       \n\n      </ion-item>\n\n      \n\n      <ion-card-content>\n\n        {{ launchpad.details }}\n\n      </ion-card-content>\n\n  \n\n    </ion-card>\n\n    <ion-card  *ngIf="launchpad">  \n\n        <ion-item>\n\n          <p> Localisation : </p> {{ launchpad.location.name }}\n\n          <p>Region : </p> {{ launchpad.location.region }} \n\n          \n\n        </ion-item>\n\n        \n\n        <ion-row>\n\n          <ion-col>\n\n            \n\n          </ion-col>\n\n        </ion-row>\n\n      \n\n      </ion-card>\n\n      <ion-card>\n\n        <div id=\'map\' style="width: 100%; height: 250px;"></div>\n\n      </ion-card>\n\n    \n\n  </ion-content>'/*ion-inline-end:"C:\wamp64\www\SpaceX\src\pages\launchpad-details\launchpad-details.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
     ], LaunchpadDetailsPage);
     return LaunchpadDetailsPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=launchpad-details.js.map
@@ -359,11 +360,11 @@ var map = {
 		2
 	],
 	"../pages/rocket-details/rocket-details.module": [
-		291,
+		290,
 		1
 	],
 	"../pages/rocket/rocket.module": [
-		290,
+		291,
 		0
 	]
 };
@@ -516,9 +517,9 @@ var HomePage = /** @class */ (function () {
         this.spacexApi.getNextLaunch().subscribe(function (data) {
             _this.time = Math.round(data.launch_date_unix - new Date().getTime() / 1000);
             // this.difference = Math.round(1530482241 - new Date().getTime()/1000); 
-            _this.jours = Math.round(_this.time / 86400);
+            _this.jours = Math.round(_this.time / 86400 - 1);
             var reste = (_this.time % 86400);
-            _this.heures = Math.round(reste / 3600);
+            _this.heures = Math.round(reste / 3600 - 1);
             reste = (_this.time % 3600);
             _this.minutes = Math.round(reste / 60);
             reste = _this.time % 60;
@@ -555,11 +556,10 @@ var HomePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-home',template:/*ion-inline-start:"C:\wamp64\www\SpaceX\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Accueil</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n   <!-- <pre *ngIf="info">{{ info | json}}</pre> -->\n\n<ion-content class="card-background-page">\n\n   <ion-card class="customborder"  *ngIf="info">  \n\n    <img src="assets/imgs/spacex.jpg"/>\n\n    <div class="card-title">{{ info.name }}</div>\n\n    <!-- <div class="card-subtitle">{{ info.founder }}</div> -->\n\n    \n\n    <div (click)="nextLaunch()" class="card-subtitle">Prochain lancement dans {{ jours }} j {{ heures }} h {{ minutes }} m {{ secondes }} s </div>\n\n  </ion-card>\n\n\n\n  <ion-card *ngIf="info">\n\n    <ion-card-content>\n\n      {{ info.summary }}\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\wamp64\www\SpaceX\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */]) === "function" && _c || Object])
     ], HomePage);
     return HomePage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -652,8 +652,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/launchpad-details/launchpad-details.module#LaunchpadDetailsPageModule', name: 'LaunchpadDetailsPage', segment: 'launchpad-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/launchpads-list/launchpads-list.module#LaunchpadsListPageModule', name: 'LaunchpadsListPage', segment: 'launchpads-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/next-launch/next-launch.module#NextLaunchPageModule', name: 'NextLaunchPage', segment: 'next-launch', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/rocket/rocket.module#RocketPageModule', name: 'RocketPage', segment: 'rocket', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/rocket-details/rocket-details.module#RocketDetailsPageModule', name: 'RocketDetailsPage', segment: 'rocket-details', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/rocket-details/rocket-details.module#RocketDetailsPageModule', name: 'RocketDetailsPage', segment: 'rocket-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/rocket/rocket.module#RocketPageModule', name: 'RocketPage', segment: 'rocket', priority: 'low', defaultHistory: [] }
                     ]
                 }),
             ],
@@ -935,9 +935,9 @@ var NextLaunchPage = /** @class */ (function () {
         this.spacexApi.getNextLaunch().subscribe(function (data) {
             _this.time = Math.round(data.launch_date_unix - new Date().getTime() / 1000);
             // this.difference = Math.round(1530482241 - new Date().getTime()/1000); 
-            _this.jours = Math.round(_this.time / 86400);
+            _this.jours = Math.round(_this.time / 86400 - 1);
             var reste = (_this.time % 86400);
-            _this.heures = Math.round(reste / 3600);
+            _this.heures = Math.round(reste / 3600 - 1);
             reste = (_this.time % 3600);
             _this.minutes = Math.round(reste / 60);
             reste = _this.time % 60;
@@ -971,11 +971,10 @@ var NextLaunchPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-next-launch',template:/*ion-inline-start:"C:\wamp64\www\SpaceX\src\pages\next-launch\next-launch.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <button ion-button menuToggle>\n\n        <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n      <ion-title>Prochain lancement</ion-title>\n\n    </ion-navbar>\n\n  </ion-header>\n\n  \n\n  \n\n \n\n  <ion-content class="card-background-page">\n\n      <!-- <pre *ngIf="launch">{{ launch | json}}</pre> -->\n\n\n\n      <ion-card  *ngIf="launch">  \n\n       <img src="assets/imgs/spacex.jpg"/>\n\n       <div class="card-title">{{ jours }} j {{ heures }} h {{ minutes }} m {{ secondes }} s</div>\n\n      \n\n       <div class="card-subtitle">{{ launch.mission_name }} </div>\n\n     </ion-card>\n\n   \n\n     <ion-card *ngIf="launch">\n\n       <ion-card-content>\n\n        <p>{{ launch.details }}</p>\n\n        <p>le {{ launch.launch_date_local | date: \'dd/MM/yyyy H:mm\' }}</p>\n\n        <p>{{ launch.launch_site.site_name_long}}</p>\n\n       </ion-card-content>\n\n     </ion-card>\n\n     <ion-card *ngIf="launch">\n\n        <ion-card-content>\n\n          <h2> Détails sur la rocket </h2>\n\n          <p>{{ launch.rocket.rocket_name }}</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n   \n\n   </ion-content>\n\n\n\n   '/*ion-inline-end:"C:\wamp64\www\SpaceX\src\pages\next-launch\next-launch.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */]) === "function" && _c || Object])
     ], NextLaunchPage);
     return NextLaunchPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=next-launch.js.map

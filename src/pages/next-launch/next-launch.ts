@@ -39,9 +39,9 @@ export class NextLaunchPage {
 
       // this.difference = Math.round(1530482241 - new Date().getTime()/1000); 
 
-      this.jours = Math.round(this.time/86400); 
+      this.jours = Math.round(this.time/86400-1); 
       let reste = (this.time%86400); 
-      this.heures = Math.round(reste/3600);
+      this.heures = Math.round(reste/3600-1);
       reste = (this.time%3600);
       this.minutes = Math.round(reste/60); 
       reste = this.time%60; 
