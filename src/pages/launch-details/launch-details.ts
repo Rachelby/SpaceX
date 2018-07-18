@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpacexApiProvider } from '../../providers/spacex-api/spacex-api';
 import { RocketDetailsPage } from '../rocket-details/rocket-details';
+import { LaunchpadDetailsPage } from '../launchpad-details/launchpad-details';
 /**
  * Generated class for the LaunchDetailsPage page.
  *
@@ -34,8 +35,10 @@ export class LaunchDetailsPage {
     this.navCtrl.push(RocketDetailsPage, id); 
   }
 
-
-
+  getLaunchpad(id:string) {
+    console.log(id);
+    this.navCtrl.push(LaunchpadDetailsPage, id); 
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LaunchDetailsPage');

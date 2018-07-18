@@ -29,7 +29,15 @@
      <ion-card *ngIf="launch">
         <ion-card-content>
           <h2> Détails sur la rocket </h2>
-          <p>{{ launch.rocket.rocket_name }}</p>
+          <!-- <p>{{ launch.rocket.rocket_name }}</p> -->
+          <a (click)='getRocket(launch.rocket.rocket_id)'>{{ launch.rocket.rocket_name }}</a>
+        </ion-card-content>
+      </ion-card>
+      <ion-card *ngIf="launch">
+        <ion-card-content>
+          <h2> Détails sur la base </h2>
+          <!-- <p>{{ launch.rocket.rocket_name }}</p> -->
+          <a (click)='getLaunchpad(launch.launch_site.site_id)'>{{ launch.launch_site.site_name }}</a>
         </ion-card-content>
       </ion-card>
    

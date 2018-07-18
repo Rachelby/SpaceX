@@ -25,17 +25,26 @@
     
     <ion-card-content>
       {{ launch[0].details }}
-    </ion-card-content>
+      <ion-row no-padding>
+          <ion-row>
+              <ion-col>
+                <button (click)="getRocket(launch[0].rocket.rocket_id)" ion-button icon-start clear small>
+                  <ion-icon name="ios-jet"></ion-icon>
+                  <div>Roquette</div>
+                </button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <button (click)="getLaunchpad(launch[0].launch_site.site_id)" ion-button icon-start clear small>
+                    <ion-icon name="ios-navigate"></ion-icon>
+                    <div>Base de lancement </div>
+                  </button>
+              </ion-col>
+            </ion-row>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>
-        <button (click)="getRocket(launch[0].rocket.rocket_id)" ion-button icon-start clear small>
-          <ion-icon name="ios-jet"></ion-icon>
-          <div>Roquette</div>
-        </button>
-      </ion-col>
-    </ion-row>
-  
+    </ion-card-content>  
   </ion-card>
 
   

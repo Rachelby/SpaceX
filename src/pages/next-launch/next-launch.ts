@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpacexApiProvider } from '../../providers/spacex-api/spacex-api';
+import { RocketDetailsPage } from '../rocket-details/rocket-details';
+import { LaunchpadDetailsPage } from '../launchpad-details/launchpad-details';
 
 /**
  * Generated class for the NextLaunchPage page.
@@ -39,9 +41,9 @@ export class NextLaunchPage {
 
       // this.difference = Math.round(1530482241 - new Date().getTime()/1000); 
 
-      this.jours = Math.round(this.time/86400); 
+      this.jours = Math.round(this.time/86400-1); 
       let reste = (this.time%86400); 
-      this.heures = Math.round(reste/3600);
+      this.heures = Math.round(reste/3600-1);
       reste = (this.time%3600);
       this.minutes = Math.round(reste/60); 
       reste = this.time%60; 
@@ -60,7 +62,17 @@ export class NextLaunchPage {
       if ( this.heures == 0 ) {this.heures = 23; this.jours--; }
     }, 1000);
     
-}
+  }
+
+  getRocket(id:string) {
+    console.log(id);
+    this.navCtrl.push(RocketDetailsPage, id); 
+  }
+
+  getLaunchpad(id:string) {
+    console.log(id);
+    this.navCtrl.push(LaunchpadDetailsPage, id); 
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NextLaunchPage');
