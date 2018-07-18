@@ -161,31 +161,32 @@ var LaunchpadDetailsPage = /** @class */ (function () {
         this.id = this.navParams.data;
         this.spacexApi.getLaunchpad(this.id).subscribe(function (data) {
             _this.launchpad = data;
+            if (_this.launchpad) {
+                _this.loadmap();
+            }
+            else {
+                console.log(__WEBPACK_IMPORTED_MODULE_3_leaflet__);
+            }
         });
     }
-    LaunchpadDetailsPage.prototype.ionViewDidEnter = function () {
-        this.loadmap();
-    };
     LaunchpadDetailsPage.prototype.loadmap = function () {
-        // On tinitialise la carte
-        this.map = __WEBPACK_IMPORTED_MODULE_3_leaflet__["default"].map("map", {
+        this.map = __WEBPACK_IMPORTED_MODULE_3_leaflet__["map"]('map', {
             center: [this.launchpad.location.latitude, this.launchpad.location.longitude],
             zoom: 10
         });
-        __WEBPACK_IMPORTED_MODULE_3_leaflet__["default"].tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        __WEBPACK_IMPORTED_MODULE_3_leaflet__["tileLayer"]('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attributions: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
             minZoom: 3,
             maxZoom: 14
         }).addTo(this.map);
-        // On rajoute un marqueur sur le point de lancement
-        var markerGroup = __WEBPACK_IMPORTED_MODULE_3_leaflet__["default"].featureGroup();
-        var marker = __WEBPACK_IMPORTED_MODULE_3_leaflet__["default"].marker([this.launchpad.location.latitude, this.launchpad.location.longitude]);
+        var markerGroup = __WEBPACK_IMPORTED_MODULE_3_leaflet__["featureGroup"]();
+        var marker = __WEBPACK_IMPORTED_MODULE_3_leaflet__["marker"]([this.launchpad.location.latitude, this.launchpad.location.longitude]);
         markerGroup.addLayer(marker);
         this.map.addLayer(markerGroup);
     };
     LaunchpadDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-launchpad-details',template:/*ion-inline-start:"C:\wamp64\www\SpaceX\src\pages\launchpad-details\launchpad-details.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <button ion-button menuToggle>\n\n        <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n      <ion-title>Détails de la base</ion-title>\n\n    </ion-navbar>\n\n  </ion-header>\n\n  \n\n  \n\n  <ion-content padding>\n\n    <!-- <pre *ngIf="launchpad">{{launchpad | json}}</pre> -->\n\n    <ion-card  *ngIf="launchpad">  \n\n      <ion-item>\n\n        \n\n        <h2> {{ launchpad.full_name }}</h2>\n\n        <!-- <p></p> -->\n\n       \n\n      </ion-item>\n\n      \n\n      <ion-card-content>\n\n        {{ launchpad.details }}\n\n      </ion-card-content>\n\n  \n\n    </ion-card>\n\n    <ion-card  *ngIf="launchpad">  \n\n        <ion-item>\n\n          <p> Localisation : </p> {{ launchpad.location.name }}\n\n          <p>Region : </p> {{ launchpad.location.region }} \n\n          <p>Latitude : </p> {{ launchpad.location.latitude }}\n\n          <p>Longitude : </p> {{ launchpad.location.longitude }}\n\n          \n\n        </ion-item>\n\n        \n\n        <ion-row>\n\n          <ion-col>\n\n            \n\n          </ion-col>\n\n        </ion-row>\n\n      \n\n      </ion-card>\n\n      <ion-card>\n\n        <div id=\'map\' ></div>\n\n      </ion-card>\n\n    \n\n  </ion-content>'/*ion-inline-end:"C:\wamp64\www\SpaceX\src\pages\launchpad-details\launchpad-details.html"*/,
+            selector: 'page-launchpad-details',template:/*ion-inline-start:"C:\wamp64\www\SpaceX\src\pages\launchpad-details\launchpad-details.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <button ion-button menuToggle>\n\n        <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n      <ion-title>Détails de la base</ion-title>\n\n    </ion-navbar>\n\n  </ion-header>\n\n  \n\n  \n\n  <ion-content padding>\n\n    <!-- <pre *ngIf="launchpad">{{launchpad | json}}</pre> -->\n\n    <ion-card  *ngIf="launchpad">  \n\n      <ion-item>\n\n        \n\n        <h2> {{ launchpad.full_name }}</h2>\n\n        <!-- <p></p> -->\n\n       \n\n      </ion-item>\n\n      \n\n      <ion-card-content>\n\n        {{ launchpad.details }}\n\n      </ion-card-content>\n\n  \n\n    </ion-card>\n\n    <ion-card  *ngIf="launchpad">  \n\n        <ion-item>\n\n          <p> Localisation : </p> {{ launchpad.location.name }}\n\n          <p>Region : </p> {{ launchpad.location.region }} \n\n          \n\n        </ion-item>\n\n        \n\n        <ion-row>\n\n          <ion-col>\n\n            \n\n          </ion-col>\n\n        </ion-row>\n\n      \n\n      </ion-card>\n\n      <ion-card>\n\n        <div id=\'map\' style="width: 100%; height: 250px;"></div>\n\n      </ion-card>\n\n    \n\n  </ion-content>'/*ion-inline-end:"C:\wamp64\www\SpaceX\src\pages\launchpad-details\launchpad-details.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_spacex_api_spacex_api__["a" /* SpacexApiProvider */]) === "function" && _c || Object])
     ], LaunchpadDetailsPage);
@@ -358,11 +359,11 @@ var map = {
 		2
 	],
 	"../pages/rocket-details/rocket-details.module": [
-		290,
+		291,
 		1
 	],
 	"../pages/rocket/rocket.module": [
-		291,
+		290,
 		0
 	]
 };
@@ -651,8 +652,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/launchpad-details/launchpad-details.module#LaunchpadDetailsPageModule', name: 'LaunchpadDetailsPage', segment: 'launchpad-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/launchpads-list/launchpads-list.module#LaunchpadsListPageModule', name: 'LaunchpadsListPage', segment: 'launchpads-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/next-launch/next-launch.module#NextLaunchPageModule', name: 'NextLaunchPage', segment: 'next-launch', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/rocket-details/rocket-details.module#RocketDetailsPageModule', name: 'RocketDetailsPage', segment: 'rocket-details', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/rocket/rocket.module#RocketPageModule', name: 'RocketPage', segment: 'rocket', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/rocket/rocket.module#RocketPageModule', name: 'RocketPage', segment: 'rocket', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/rocket-details/rocket-details.module#RocketDetailsPageModule', name: 'RocketDetailsPage', segment: 'rocket-details', priority: 'low', defaultHistory: [] }
                     ]
                 }),
             ],

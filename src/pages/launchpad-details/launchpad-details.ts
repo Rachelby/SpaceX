@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpacexApiProvider } from '../../providers/spacex-api/spacex-api';
-import leaflet from 'leaflet';
+
+import * as L from 'leaflet';
 
 /**
  * Generated class for the LaunchpadDetailsPage page.
@@ -16,9 +17,10 @@ import leaflet from 'leaflet';
   templateUrl: 'launchpad-details.html',
 })
 export class LaunchpadDetailsPage {
-  launchpad: any;
+  public launchpad: any;
   id : any;
-  map: any;
+  private map: any;
+
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -26,31 +28,33 @@ export class LaunchpadDetailsPage {
       this.id = this.navParams.data;
       this.spacexApi.getLaunchpad(this.id).subscribe(data => {
       this.launchpad = data;
+      if (this.launchpad){
+        this.loadmap();
+      }else{
+        console.log(L);
+      }
     })
   }
 
+ 
 
-  ionViewDidEnter() {
-    this.loadmap();
-  }
 
   loadmap() {
-    // On tinitialise la carte
-    this.map = leaflet.map("map", {
+    this.map = L.map('map', {
       center: [this.launchpad.location.latitude, this.launchpad.location.longitude],
       zoom: 10
     })
 
-    leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attributions: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
       minZoom: 3,
       maxZoom: 14
     }).addTo(this.map);
 
-    // On rajoute un marqueur sur le point de lancement
-    let markerGroup = leaflet.featureGroup();
-    let marker: any = leaflet.marker([this.launchpad.location.latitude, this.launchpad.location.longitude]);
+    let markerGroup = L.featureGroup();
+    let marker: any = L.marker([this.launchpad.location.latitude, this.launchpad.location.longitude]);
     markerGroup.addLayer(marker);
     this.map.addLayer(markerGroup);
   }
+
 }
